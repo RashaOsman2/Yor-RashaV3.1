@@ -19,7 +19,7 @@ module.exports.handleEvent = function({ api, event }) {
 				attachment: fs.createReadStream(__dirname + `/Nayan/Fidar.mp3`)
 			}
 			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("😍", event.messageID, (err) => {}, true)
+    api.setMessageReaction("🍼", event.messageID, (err) => {}, true)
 		}
 	}
 	module.exports.run = function({ api, event, client, __GLOBAL }) {

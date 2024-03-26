@@ -48,13 +48,13 @@ module.exports.run = async function({ api, event, Users }) {
   if (event.logMessageData.addedParticipants && Array.isArray(event.logMessageData.addedParticipants) && event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     //api.changeNickname(`𝗕𝗢𝗧 ${(!global.config.BOTNAME) ? "Buddy" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 
-    let gifUrl = 'https://i.postimg.cc/SNQXkB0y/lv-0-20231018174834.gif';
+    let gifUrl = 'https://i.postimg.cc/ZnYPcqWg/20240124-224653.gif';
 let gifPath = __dirname + '/Nayan/join/join.gif';
 
 axios.get(gifUrl, { responseType: 'arraybuffer' })
 .then(response => {
     fs.writeFileSync(gifPath, response.data);
-    return api.sendMessage("চলে এসেছি আমি পিচ্চি রাশহা তোমাদের মাঝে🤭!", event.threadID, () => api.sendMessage({ body: `${global.config.BOTNAME} CONNECTED«\n\nAssalamualaykum☘️
+    return api.sendMessage("চলে এসেছি আমি পিচ্চি রাশহা তোমাদের মাঝে🤭!", event.threadID, () => api.sendMessage({ body: `${global.config.BOTNAME} CONNECTED«\n\n Assalamualaikum☘️
 <------------------------------>  
 BOT CONNECTED SUCCESFUL !!! 
 
@@ -64,15 +64,12 @@ APPROVAL ALLOW IN THIS GROUP!!!
 <------------------------------>
 AND FOR ANY COMPLAINTS OR CONTACT BOT OPERATOR 
 
-DEVELOPER :Rasha Osman 
+DEVELOPER :Rasha Osman
 
 🟣Facebook Account Link: 
 
 https://www.facebook.com/profile.php?id=100008261923491&mibextid=ZbWKwL
-
-🔵WHATSAPP NUMBER: Janar Dorkar Nai🐸
-
-🟢SUPPORT EMAIL: Aitao Janar Dorkar Nai🐸`, attachment: fs.createReadStream(gifPath)}, threadID));
+`, attachment: fs.createReadStream(gifPath)}, threadID));
 })
 .catch(error => {
     console.error(error);

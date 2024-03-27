@@ -1,4 +1,4 @@
-module.exports.config = {
+/*module.exports.config = {
   name: "imgur",
   version: "1.0.0",
   permission: 0,

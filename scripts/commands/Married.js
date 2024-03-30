@@ -46,9 +46,9 @@ async function makeImage({ one, two }) {
     let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
     
-    let circleOne = await jimp.read(await circle(avatarOne));
+        let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(110, 110), 150, 76).composite(circleTwo.resize(100, 100), 238, 305);
+    batgiam_img.composite(circleOne.resize(100, 100), 55, 48).composite(circleTwo.resize(100, 100), 190, 40);
     
     let raw = await batgiam_img.getBufferAsync("image/png");
     

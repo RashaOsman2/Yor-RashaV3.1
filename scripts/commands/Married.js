@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "married",
+	name: "Married",
   version: "1.0.0",
   permission: 0,
   credits: "Rasha",
@@ -23,7 +23,7 @@ module.exports.onLoad = async() => {
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/Nayan`;
     const path = resolve(__dirname, 'Nayan', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
-    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
+    if (!existsSync(dirMaterial + "Nayan")) mkdirSync(dirMaterial, { recursive: true });
     if (!existsSync(path)) await downloadFile("https://i.ibb.co/mc9KNm1/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg", path);
 }
 
@@ -32,21 +32,12 @@ async function makeImage({ one, two }) {
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "cache", "canvas");
+    const __root = path.resolve(__dirname, "Nayan", "");
 
-    const imagePath = __root + "/Nayan/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg";
-    console.log("Image path:", imagePath);
-    if (!fs.existsSync(imagePath)) {
-        console.error("Image file does not exist at the specified path:", imagePath);
-        // Handle this case gracefully or return an error
-        return null;
-    } else {
-        let batgiam_img = await jimp.read(imagePath);
-        let pathImg = __root + `/batman${one}_${two}.png`;
-        let avatarOne = __root + `/avt_${one}.png`;
-        let avatarTwo = __root + `/avt_${two}.png`;
-        
-
+    let batgiam_img = await jimp.read(__root + "/Nayan/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg);
+    let pathImg = __root + `/batman${one}_${two}.png`;
+    let avatarOne = __root + `/avt_${one}.png`;
+    let avatarTwo = __root + `/avt_${two}.png`;
     
     let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));

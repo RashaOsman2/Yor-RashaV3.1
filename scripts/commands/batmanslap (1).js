@@ -33,7 +33,7 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let tromcho_img = await jimp.read(__root + "/batmanslap.jpg");
+    let tromcho_img = await jimp.read(__dirname + '/Nayan/images (3).jpeg');
     let pathImg = __root + `/tromcho_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;

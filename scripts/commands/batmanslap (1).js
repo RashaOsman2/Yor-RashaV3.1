@@ -1,18 +1,20 @@
 module.exports.config = {
-    name: "batslap",
-    version: "2.0.0",
-    hasPermssion: 0,
-    credits: "Phan Duy",
-    description: "",
-    commandCategory: "general",
-    usages: "[tag]",
-    cooldowns: 5,
-    dependencies: {
-        "axios": "",
-        "fs-extra": "",
-        "path": "",
-        "jimp": ""
-    }
+	name: "batmanslap",
+  version: "1.0.0",
+  permission: 0,
+  credits: "Rasha",
+  description: " ",
+  prefix: true, 
+  category: "user", 
+  usages: "@",
+  cooldowns: 5,
+  dependencies: {
+	  "fs-extra": "",
+	  "axios": "",
+	  "canvas" :"",
+	  "jimp": "",
+	  "node-superfetch": ""
+  }
 };
 
 module.exports.onLoad = async() => {

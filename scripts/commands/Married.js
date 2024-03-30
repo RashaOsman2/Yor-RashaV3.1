@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "Married",
+	name: "married",
   version: "1.0.0",
   permission: 0,
   credits: "Rasha",
@@ -22,7 +22,7 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/Nayan`;
-    const path = resolve(__dirname, 'Nayan', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
+    const path = resolve(__dirname, 'Nayan/', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
     if (!existsSync(dirMaterial + "Nayan")) mkdirSync(dirMaterial, { recursive: true });
     if (!existsSync(path)) await downloadFile("https://i.ibb.co/mc9KNm1/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg", path);
 }
@@ -32,9 +32,9 @@ async function makeImage({ one, two }) {
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "Nayan");
+    const __root = path.resolve(__dirname, "Nayan", "1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg");
 
-    let batgiam_img = await jimp.read(__root + "/Nayan/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg);
+    let batgiam_img = await jimp.read(__root + "/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg");
     let pathImg = __root + `/batman${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;

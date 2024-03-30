@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "Game(Beta)",
+	name: "Game",
   version: "1.0.0",
   permission: 0,
   credits: "Rasha",

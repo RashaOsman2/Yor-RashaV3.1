@@ -22,7 +22,7 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/Nayan`;
-    const path = resolve(__dirname, 'Nayan/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
+    const path = resolve(__dirname, 'Nayan', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
     if (!existsSync(path)) await downloadFile("https://i.ibb.co/mc9KNm1/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg", path);
 }

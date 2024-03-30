@@ -1,17 +1,15 @@
 module.exports.config = {
     name: "speedtest",
     version: "1.0.0",
-    hasPermssion: 0,
-    credits: "Zia_Rein",
-    description: "My server speed",
-    commandCategory: "system",
-    cooldowns: 15,
-    dependencies: {
-		"fast-speedtest-api": ""
-	}
+    permssion: 0,
+    credits: "Rasha",
+    description: "Thêm người dùng vào nhóm bằng link hoặc UID",
+  prefix: true,
+    category: "Box chat",
+    usages: "< link/UID >",
+    cooldowns: 5
 };
-
-module.exports.run = async function({ api, event }) {
+module.exports.run = async function ({ api, event, args, Threads, Users }) {
 
 	try {
 		const fast = global.nodemodule["fast-speedtest-api"];

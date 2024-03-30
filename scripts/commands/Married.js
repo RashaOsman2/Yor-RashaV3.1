@@ -18,12 +18,13 @@ module.exports.config = {
 };
 
 module.exports.onLoad = async() => {
+  
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
-    const dirMaterial = __dirname + `/Nayan`;
-    const path = resolve(__dirname, 'Nayan/', '1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg');
-    if (!existsSync(dirMaterial + "Nayan")) mkdirSync(dirMaterial, { recursive: true });
+    const dirMaterial = __dirname + `/cache/canvas/`;
+    const path = resolve(__dirname, 'cache/canvas', 'joshua.png');
+    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
     if (!existsSync(path)) await downloadFile("https://i.ibb.co/mc9KNm1/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg", path);
 }
 
@@ -32,9 +33,9 @@ async function makeImage({ one, two }) {
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "Nayan", "1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg");
+    const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let batgiam_img = await jimp.read(__root + "/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg");
+    let batgiam_img = await jimp.read(__root + "/joshua.png");
     let pathImg = __root + `/batman${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
@@ -47,7 +48,7 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(100, 100), 55, 48).composite(circleTwo.resize(100, 100), 190, 40);
+    batgiam_img.composite(circleOne.resize(110, 110), 150, 76).composite(circleTwo.resize(100, 100), 238, 305);
     
     let raw = await batgiam_img.getBufferAsync("image/png");
     
@@ -64,13 +65,20 @@ async function circle(image) {
     return await image.getBufferAsync("image/png");
 }
 
-module.exports.run = async function ({ event, api, args }) {    
+module.exports.run = async function ({ event, api, args }) {
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
-    const mention = Object.keys(event.mentions);
-    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
+    var mention = Object.keys(event.mentions);
+    if (!mention[0]) return api.sendMessage(`Please tag 1 person\n\nHow to use?\n${global.config.PREFIX}crush <@tag>\n\nExample:\n${global.config.PREFIX}crush @name\n\nCreated by: CaNDY (LaFhanGa chokra)`, threadID, messageID);
     else {
-        const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+      let tag = event.mentions[mention].replace("@", "");
+        var one = senderID, two = mention;
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "what a cute couple\nstay strong",
+            mentions: [{
+          tag: tag,
+          id: mention
+        }],
+     attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
 }
+

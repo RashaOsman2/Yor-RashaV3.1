@@ -2,14 +2,14 @@ const axios = require('axios');
 const fs = require('fs-extra');
 
 module.exports.config = {
-  name: "ramadan",
+  name: "Remini",
   version: "0.0.1",
   permission: 0,
   prefix: true,
-  credits: "Nayan",
-  description: "Ramadan",
+  credits: "Rasha",
+  description: "Remini",
   category: "user",
-  usages: "",
+  usages: "Reply to a photo",
     cooldowns: 5,
 };
 

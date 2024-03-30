@@ -2,15 +2,14 @@ const axios = require('axios');
 const fs = require('fs-extra');
 
 module.exports.config = {
-  name: "Remini",
-  version: "0.0.1",
-  permission: 0,
-  prefix: true,
-  credits: "Rasha",
-  description: "Remini",
-  category: "user",
-  usages: "Reply to a photo",
-    cooldowns: 5,
+  name: "remini",
+  version: "2.2",
+  hasPermssion: 0,
+  credits: "Hazeyy",
+  description: "( 𝙍𝙚𝙢𝙞𝙣𝙞 )",
+  commandCategory: "no prefix",
+  usages: "( Reply to a photo to enhance image )",
+  cooldowns: 2,
 };
 
 module.exports.handleEvent = async function ({ api, event }) {

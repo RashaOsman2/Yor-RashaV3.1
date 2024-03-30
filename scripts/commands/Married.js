@@ -32,7 +32,7 @@ async function makeImage({ one, two }) {
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "Nayan", "");
+    const __root = path.resolve(__dirname, "Nayan");
 
     let batgiam_img = await jimp.read(__root + "/Nayan/1619885987-21-pibig-info-p-anime-romantika-svadba-anime-krasivo-24.jpg);
     let pathImg = __root + `/batman${one}_${two}.png`;

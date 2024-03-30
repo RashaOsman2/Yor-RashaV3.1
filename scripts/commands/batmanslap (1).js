@@ -17,13 +17,13 @@ module.exports.config = {
   }
 };
 
-module.exports.onLoad = async() => {
+module.exports.onLoad = async () => {
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/Nayan`;
     const path = resolve(__dirname, 'Nayan/images (3).jpeg', 'images (3).jpeg');
-    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
+    if (!existsSync(dirMaterial + "Nayan")) mkdirSync(dirMaterial, { recursive: true });
 }
 
 async function makeImage({ one, two }) {

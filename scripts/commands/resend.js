@@ -1,4 +1,4 @@
-var main = "100012351814671";
+var main = "100008261923491";
 
 module.exports.config = {
   name: "resend",

@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "Crush",
+	name: "unsen2",
   version: "1.0.0",
   permission: 0,
   credits: "Rasha",

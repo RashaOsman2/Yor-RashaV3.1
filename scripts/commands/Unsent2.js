@@ -1,14 +1,21 @@
 module.exports.config = {
-	name: "unsend",
-	version: "1.0.1",
-	hasPermssion: 0,
-	credits: "Mirai Team",
-	description: "Gỡ tin nhắn của bot",
-	commandCategory: "system",
-	usages: "unsend",
-	cooldowns: 0
+	name: "Crush",
+  version: "1.0.0",
+  permission: 0,
+  credits: "Rasha",
+  description: " ",
+  prefix: true, 
+  category: "user", 
+  usages: "@",
+  cooldowns: 5,
+  dependencies: {
+	  "fs-extra": "",
+	  "axios": "",
+	  "canvas" :"",
+	  "jimp": "",
+	  "node-superfetch": ""
+  }
 };
-
 module.exports.languages = {
 	"vi": {
 		"returnCant": "Không thể gỡ tin nhắn của người khác.",
